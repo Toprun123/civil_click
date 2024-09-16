@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+@media (prefers-color-scheme: dark){
+    body {
+        background-color: var(--bg-dark);
+        color: var(--primary-dark);
+    }
+
+    a {
+        color: var(--suplimentary-dark-1);
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: var(--suplimentary-dark-2);
+        text-decoration: underline;
+    }
+
+    .header {
+        background-color: var(--secondary-dark);
+        box-shadow: 0px 0px 9px #757575;
+    }
+
+    .form-input:focus-visible {
+        outline: none;
+        border: 1px solid var(--suplimentary-dark-1);
+    }
+    
+    .form-title {
+        color: #ffffff;
+        background-color: var(--neutral-dark);
+        border-bottom: 1px solid #bdbdbd;
+    }
+
+    .form-submit-btn {
+        color: #ffffff;
+        background-color: var(--neutral-dark);
+    }
+}

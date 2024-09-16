@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+:root {
+
+    --bg-light:             #ffffff;
+    --primary-light:        #f0a312;
+    --secondary-light:      #ffe435;
+    --neutral-light:        #addf00;
+    --suplimentary-light-1: #6d9ae3;
+    --suplimentary-light-2: #607caa;
+
+    --bg-dark:              #3c3c3c;
+    --primary-dark:         #ffffff;
+    --secondary-dark:       #213238;
+    --neutral-dark:         #6b57aa;
+    --suplimentary-dark-1:  #68addb;
+    --suplimentary-dark-2:  #4d81a3;
+
+}

@@ -1,0 +1,5 @@
+**/_**/
+**/migrations/
+.venv
+staticfiles
+**.sqlite3

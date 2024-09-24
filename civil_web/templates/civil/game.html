@@ -1,0 +1,273 @@
+{% extends "civil/layout.html" %}
+{% load static %}
+
+{% block title %}Civil - Test file{% endblock %}
+
+{% block body %}
+    <div class="small">Sorry, but please use landscape mode or your screen is too small to play.</div>
+    <div class="main">
+        <div class="stars">
+            <span>       </span>
+            <span id="stars-note" class="stars-note clicker tooltip-down" data-display-text="Ascend to gain more stars.">     You do not own any stars yet.</span><span id="stars"></span>
+            <button class="del-game" onclick="del_data()">Reset Game</button>
+        </div>
+        <div class="centre-console">
+            <div class="clickers">
+                <table class="clicker-table">
+                    <tr class="clicker-table-row">
+                        <th>Clickers</th>
+                    </tr>
+                    <tr class="clicker-table-row">
+                        <td><input type="button" value="Hunt" id="hunt-b" class="clicker-i"></td>
+                    </tr>
+                    <tr class="clicker-table-row">
+                        <td><input type="button" value="Forage" id="forage-b" class="clicker-i"></td>
+                    </tr>
+                    <tr class="clicker-table-row">
+                        <td><input type="button" value="Chop" id="chop-b" class="clicker-i"></td>
+                    </tr>
+                    <tr class="clicker-table-row">
+                        <td><input type="button" value="Mine" id="mine-b" class="clicker-i"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="rates">
+                <table class="rates-table">
+                    <tr class="rates-table-row">
+                        <th>
+                            <button id="ascend" class="clicker tooltip-down" data-display-text="You can only ascend if all your resources are maxed!">📈 Ascend</button>
+                        </th>
+                        <th class="desktop-only"></th>
+                        <th><input id="factory-manager" class="clicker" type="button" value="🏭 Manage factories"></th>
+                    </tr>
+                    <tr class="rates-table-row">
+                        <td class="rate-output" id="hunt-rate"></td>
+                        <td class="desktop-only"></td>
+                        <td class="rate-output" id="factory-1-rate">Factory not setup</td>
+                    </tr>
+                    <tr class="rates-table-row">
+                        <td class="rate-output" id="forage-rate"></td>
+                        <td class="desktop-only"></td>
+                        <td class="rate-output" id="factory-2-rate">Factory not setup</td>
+                    </tr>
+                    <tr class="rates-table-row">
+                        <td class="rate-output" id="chop-rate"></p></td>
+                        <td class="desktop-only"></td>
+                        <td class="rate-output" id="factory-3-rate">Factory not setup</td>
+                    </tr>
+                    <tr class="rates-table-row">
+                        <td class="rate-output" id="mine-rate"></p></td>
+                        <td class="desktop-only"></td>
+                        <td class="rate-output" id="factory-4-rate">Factory not setup</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="jobs">
+                <table class="table-jobs">
+                    <tr class="table-jobs-row">
+                        <td>
+                            <input type="button" value="-∞" class="clicker" id="min-pop">
+                            <input type="button" value="-100" class="clicker desktop-only" id="-100-pop">
+                            <input type="button" value="-10" class="clicker desktop-only" id="-10-pop">
+                            <input type="button" value="-1" class="clicker" id="-1-pop">
+                            <span id="nitwit"></span>
+                            <input type="button" value="+1" class="clicker" id="1-pop">
+                            <input type="button" value="+10" class="clicker desktop-only" id="10-pop">
+                            <input type="button" value="+100" class="clicker desktop-only" id="100-pop">
+                            <input type="button" value="+∞" class="clicker" id="max-pop">
+                        </td>
+                    </tr>
+                    <tr class="table-jobs-row">
+                        <td>
+                            <input type="button" value="-∞" class="clicker" id="min-hunter">
+                            <input type="button" value="-100" class="clicker desktop-only" id="-100-hunter">
+                            <input type="button" value="-10" class="clicker desktop-only" id="-10-hunter">
+                            <input type="button" value="-1" class="clicker" id="-1-hunter">
+                            <span id="hunter"></span>
+                            <input type="button" value="+1" class="clicker" id="1-hunter">
+                            <input type="button" value="+10" class="clicker desktop-only" id="10-hunter">
+                            <input type="button" value="+100" class="clicker desktop-only" id="100-hunter">
+                            <input type="button" value="+∞" class="clicker" id="max-hunter">
+                        </td>
+                    </tr>
+                    <tr class="table-jobs-row">
+                        <td>
+                            <input type="button" value="-∞" class="clicker" id="min-forager">
+                            <input type="button" value="-100" class="clicker desktop-only" id="-100-forager">
+                            <input type="button" value="-10" class="clicker desktop-only" id="-10-forager">
+                            <input type="button" value="-1" class="clicker" id="-1-forager">
+                            <span id="forager"></span>
+                            <input type="button" value="+1" class="clicker" id="1-forager">
+                            <input type="button" value="+10" class="clicker desktop-only" id="10-forager">
+                            <input type="button" value="+100" class="clicker desktop-only" id="100-forager">
+                            <input type="button" value="+∞" class="clicker" id="max-forager">
+                        </td>
+                    </tr>
+                    <tr class="table-jobs-row">
+                        <td>
+                            <input type="button" value="-∞" class="clicker" id="min-lumberjack">
+                            <input type="button" value="-100" class="clicker desktop-only" id="-100-lumberjack">
+                            <input type="button" value="-10" class="clicker desktop-only" id="-10-lumberjack">
+                            <input type="button" value="-1" class="clicker" id="-1-lumberjack">
+                            <span id="lumberjack"></span>
+                            <input type="button" value="+1" class="clicker" id="1-lumberjack">
+                            <input type="button" value="+10" class="clicker desktop-only" id="10-lumberjack">
+                            <input type="button" value="+100" class="clicker desktop-only" id="100-lumberjack">
+                            <input type="button" value="+∞" class="clicker" id="max-lumberjack">
+                        </td>
+                    </tr>
+                    <tr class="table-jobs-row">
+                        <td>
+                            <input type="button" value="-∞" class="clicker" id="min-miner">
+                            <input type="button" value="-100" class="clicker desktop-only" id="-100-miner">
+                            <input type="button" value="-10" class="clicker desktop-only" id="-10-miner">
+                            <input type="button" value="-1" class="clicker" id="-1-miner">
+                            <span id="miner"></span>
+                            <input type="button" value="+1" class="clicker" id="1-miner">
+                            <input type="button" value="+10" class="clicker desktop-only" id="10-miner">
+                            <input type="button" value="+100" class="clicker desktop-only" id="100-miner">
+                            <input type="button" value="+∞" class="clicker" id="max-miner">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="inventory">
+            <table class="table-inventory">
+                <tr class="table-inventory-row">
+                    <td class="inventory-logo"><img height="37" src="{% static '/civil/images/meat.svg' %}"></td>
+                    <td class="inventory-content" id="meat"></td>
+                    <td class="inventory-logo"><img height="37" src="{% static '/civil/images/hide.png' %}"></td>
+                    <td class="inventory-content" id="hide"></td>
+                    <td class="inventory-logo"><img height="37" src="{% static '/civil/images/leather.svg' %}"></td>
+                    <td class="inventory-content" id="leather"></td>
+                </tr>
+                <tr class="table-inventory-row">
+                    <td class="inventory-logo">🧶</td>
+                    <td class="inventory-content" id="wool"></td>
+                    <td class="inventory-logo">🍒</td>
+                    <td class="inventory-content" id="berries"></td>
+                    <td class="inventory-logo">🌿</td>
+                    <td class="inventory-content" id="comphrey"></td>
+                </tr>
+                <tr class="table-inventory-row">
+                    <td class="inventory-logo">🪵</td>
+                    <td class="inventory-content" id="wood"></td>
+                    <td class="inventory-logo"><img height="37" src="{% static '/civil/images/stone.svg' %}"></td>
+                    <td class="inventory-content" id="stone"></td>
+                    <td class="inventory-logo"><img height="37" src="{% static '/civil/images/ore.svg' %}"></td>
+                    <td class="inventory-content" id="ore"></td>
+                </tr>
+                <tr class="table-inventory-row">
+                    <td class="inventory-logo">🍖</td>
+                    <td class="inventory-content" id="steak"></td>
+                    <td class="inventory-logo"><img height="37" src="{% static '/civil/images/piety.png' %}"></td>
+                    <td class="inventory-content" id="piety"></td>
+                    <td class="inventory-logo">🛡️</td>
+                    <td class="inventory-content" id="shield"></td>
+                </tr>
+                <tr class="table-inventory-row">
+                    <td class="inventory-logo">🛏️</td>
+                    <td class="inventory-content" id="bed"></td>
+                    <td class="inventory-logo"><img height="37" src="{% static '/civil/images/iron.png' %}"></td>
+                    <td class="inventory-content" id="iron"></td>
+                    <td class="inventory-logo"><img height="37" src="{% static '/civil/images/gold.svg' %}"></td>
+                    <td class="inventory-content" id="gold"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="factories" class="factories">
+        <div class="factory-store">
+            Select a factory type: 
+            <select name="factory-type" id="factory-type-sel">
+                <option value="roastery">Roastery (Steak)</option>
+                <option value="shrineworks">Shrineworks (Piety)</option>
+                <option value="shieldsmith">Shieldsmith (Shields)</option>
+                <option value="ironworks">Ironworks (Iron)</option>
+                <option value="aurum">Aurum Forge (Gold)</option>
+                <option value="slumberworks">Slumber Works (Beds)</option>
+                <option value="tannery">Tannery (Leather)</option>
+            </select>
+            <button id="new-factory" class="clicker add-factory-btn tooltip-up" data-display-text=" Requires max wood and stone! "> + Factory </button>
+            <button class="x-btn delete-btn">❌</button>
+        </div>
+        <div class="factory" id="factory-1">
+            <button class="delete-btn" id="delete-btn-1"><p class="mobile-only">❌</p><img class="desktop-only" height="50" src="{% static '/civil/images/delete.png' %}"></button>
+            <div class="input-container" id="input-container-1"></div>
+            <div class="arrow"><span class="mobile-only">-></span><img class="desktop-only" height="37" src="{% static '/civil/images/arrow.svg' %}"></div>
+            <div class="workers-container">
+                <input type="button" value="-100" id="-100-factory-1" class="clicker desktop-only">
+                <input type="button" value="-10" id="-10-factory-1" class="clicker">
+                <input type="button" value="-1" id="-1-factory-1" class="clicker">
+                Workers: <span id="workers-1"></span>
+                <input type="button" value="+1" id="1-factory-1" class="clicker">
+                <input type="button" value="+10" id="10-factory-1" class="clicker">
+                <input type="button" value="+100" id="100-factory-1" class="clicker desktop-only">
+            </div>
+            <div class="arrow"><span class="mobile-only">-></span><img class="desktop-only" height="37" src="{% static '/civil/images/arrow.svg' %}"></div>
+            <div class="put-container" id="put-container-1"></div>
+        </div>
+        <div class="factory" id="factory-2">
+            <button class="delete-btn" id="delete-btn-2"><p class="mobile-only">❌</p><img class="desktop-only" height="50" src="{% static '/civil/images/delete.png' %}"></button>
+            <div class="input-container" id="input-container-2"></div>
+            <div class="arrow"><span class="mobile-only">-></span><img class="desktop-only" height="37" src="{% static '/civil/images/arrow.svg' %}"></div>
+            <div class="workers-container">
+                <input type="button" value="-100" id="-100-factory-2" class="clicker desktop-only">
+                <input type="button" value="-10" id="-10-factory-2" class="clicker">
+                <input type="button" value="-1" id="-1-factory-2" class="clicker">
+                Workers: <span id="workers-2"></span>
+                <input type="button" value="+1" id="1-factory-2" class="clicker">
+                <input type="button" value="+10" id="10-factory-2" class="clicker">
+                <input type="button" value="+100" id="100-factory-2" class="clicker desktop-only">
+            </div>
+            <div class="arrow"><span class="mobile-only">-></span><img class="desktop-only" height="37" src="{% static '/civil/images/arrow.svg' %}"></div>
+            <div class="put-container" id="put-container-2">
+                <span id="output-logo-2"></span>
+                <span id="output-amount-2"></span>
+            </div>
+        </div>
+        <div class="factory" id="factory-3">
+            <button class="delete-btn" id="delete-btn-3"><p class="mobile-only">❌</p><img class="desktop-only" height="50" src="{% static '/civil/images/delete.png' %}"></button>
+            <div class="input-container" id="input-container-3"></div>
+            <div class="arrow"><span class="mobile-only">-></span><img class="desktop-only" height="37" src="{% static '/civil/images/arrow.svg' %}"></div>
+            <div class="workers-container">
+                <input type="button" value="-100" id="-100-factory-3" class="clicker desktop-only">
+                <input type="button" value="-10" id="-10-factory-3" class="clicker">
+                <input type="button" value="-1" id="-1-factory-3" class="clicker">
+                Workers: <span id="workers-3"></span>
+                <input type="button" value="+1" id="1-factory-3" class="clicker">
+                <input type="button" value="+10" id="10-factory-3" class="clicker">
+                <input type="button" value="+100" id="100-factory-3" class="clicker desktop-only">
+            </div>
+            <div class="arrow"><span class="mobile-only">-></span><img class="desktop-only" height="37" src="{% static '/civil/images/arrow.svg' %}"></div>
+            <div class="put-container" id="put-container-3">
+                <span id="output-logo-3"></span>
+                <span id="output-amount-3"></span>
+            </div>
+        </div>
+        <div class="factory" id="factory-4">
+            <button class="delete-btn" id="delete-btn-4"><p class="mobile-only">❌</p><img class="desktop-only" height="50" src="{% static '/civil/images/delete.png' %}"></button>
+            <div class="input-container" id="input-container-4"></div>
+            <div class="arrow"><span class="mobile-only">-></span><img class="desktop-only" height="37" src="{% static '/civil/images/arrow.svg' %}"></div>
+            <div class="workers-container">
+                <input type="button" value="-100" id="-100-factory-4" class="clicker desktop-only">
+                <input type="button" value="-10" id="-10-factory-4" class="clicker">
+                <input type="button" value="-1" id="-1-factory-4" class="clicker">
+                Workers: <span id="workers-4"></span>
+                <input type="button" value="+1" id="1-factory-4" class="clicker">
+                <input type="button" value="+10" id="10-factory-4" class="clicker">
+                <input type="button" value="+100" id="100-factory-4" class="clicker desktop-only">
+            </div>
+            <div class="arrow"><span class="mobile-only">-></span><img class="desktop-only" height="37" src="{% static '/civil/images/arrow.svg' %}"></div>
+            <div class="put-container" id="put-container-4">
+                <span id="output-logo-4"></span>
+                <span id="output-amount-4"></span>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+    <script src="{% static '/civil/js/helper_functions.js' %}?t={% now 'U' %}"></script>
+    <script src="{% static '/civil/js/game.js' %}?t={% now 'U' %}"></script>
+    <link rel="stylesheet" href="{% static '/civil/css/custom/game.css' %}">
+{% endblock %}

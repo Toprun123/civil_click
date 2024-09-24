@@ -5,36 +5,23 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static '/calio/css/master.css' %}">
+        <link rel="stylesheet" href="{% static '/civil/css/master.css' %}">
         <title>{% block title %}Civil_Click - a civilization game{% endblock %}</title>
+        <script>
+            var account_name = "{{ user.username }}";
+        </script>
     </head>
     <body>
         <div class="header">
             <div class="header-logo">
                 <a href="/">
-                    <picture>
-                        <source media="(prefers-color-scheme: dark) and (min-width: 800px)" srcset="{% static '/calio/images/dark/lg_logo.svg' %}">
-                        <source media="(prefers-color-scheme: dark) and (max-width: 800px)" srcset="{% static '/calio/images/dark/sm_logo.svg' %}">
-                        <source media="(prefers-color-scheme: light) and (min-width: 800px)" srcset="{% static '/calio/images/light/lg_logo.svg' %}">
-                        <source media="(prefers-color-scheme: light) and (max-width: 800px)" srcset="{% static '/calio/images/light/sm_logo.svg' %}">
-                        <img class="logo-image" src="{% static '/calio/images/light/lg_logo.svg' %}" alt="calio">
-                    </picture>
+                    <img class="logo-image" src="{% static '/civil/images/icon.svg' %}" alt="civil">
                 </a>
-            </div>
-            <div class="header-search-container">
-                <input type="text" class="header-search-input">&nbsp;
-                <button class="header-search-submit-btn">
-                    <picture>
-                        <source media="(prefers-color-scheme: light)" srcset="{% static '/calio/images/light/search.svg' %}">
-                        <source media="(prefers-color-scheme: dark)" srcset="{% static '/calio/images/dark/search.svg' %}">
-                        <img class="header-search-submit_btn-img" src="{% static '/calio/images/light/search.svg' %}" alt="🔍">
-                    </picture>
-                </button>
             </div>
             <div class="header-links">
                 {% if user.is_authenticated %}
                     <div class="header-link-card">
-                        <a href="/create" class="header-link">Create</a>
+                        <a href="/game" class="header-link">Play</a>
                         <span class="header-link-underline"></span>
                     </div>
                     <div class="header-link-card">

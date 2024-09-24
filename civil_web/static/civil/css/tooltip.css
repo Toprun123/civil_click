@@ -1,87 +1,82 @@
 @charset "UTF-8";
 
+.tooltip-down {
+    position: relative;
+}
+
+.tooltip-up {
+    position: relative;
+}
+
 .tooltip-down:hover::before {
     cursor: default;
     content: attr(data-display-text);
     font-weight: bold;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     position: absolute;
-    top: 45px;
-    left: calc(-50px - -19.5px);
-    color: rgb(56, 56, 56);
+    top: 50px;
+    left: calc(50% + 9px);
+    width: 250px;
+    transform: translateX(-50%);
+    color: rgb(198, 198, 198);
     border: 5px solid rgb(56, 56, 56);
     border-radius: 7px;
-    background-color: rgba(199, 199, 199, 0.89);
+    background-color: rgb(56, 56, 56);
     font-size: 18px;
-    height: 35px;
-    width: 100px;
     opacity: 1;
+    z-index: 103;
 }
 
 .tooltip-down:hover::after {
     content: "";
     cursor: default;
     position: absolute;
-    top: 40px;
+    top: 42px;
     background-color: rgb(56, 56, 56);
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, transparent), color-stop(50%, rgb(56, 56, 56)));
-    background: -o-linear-gradient(top left, transparent 50%, rgb(56, 56, 56) 50%);
     background: linear-gradient(to bottom right, transparent 50%, rgb(56, 56, 56) 50%);
-    left: calc(19.5px - 7px);
+    left: 50%;
     border-bottom: 5px solid rgb(56, 56, 56);
     border-right: 5px solid rgb(56, 56, 56);
-    -webkit-transform: rotate(225deg);
-        -ms-transform: rotate(225deg);
-            transform: rotate(225deg);
+    transform: rotate(225deg) translateX(-50%);
     opacity: 1;
     width: 10px;
     height: 10px;
+    z-index: 102;
 }
 
 .tooltip-up:hover::before {
     cursor: default;
     content: attr(data-display-text);
     font-weight: bold;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     position: absolute;
-    top: -40px;
-    left: calc(-50px - -19.5px);
-    color: rgb(56, 56, 56);
+    top: calc(100% - 28px);
+    left: calc(50% + 3px);
+    color: rgb(198, 198, 198);
     border: 5px solid rgb(56, 56, 56);
     border-radius: 7px;
-    background-color: rgba(199, 199, 199, 0.89);
+    background-color: rgb(56, 56, 56);
+    transform: translateX(-50%) translateY(-100%);
     font-size: 18px;
-    height: 35px;
-    width: 100px;
     opacity: 1;
+    z-index: 100;
 }
 
 .tooltip-up:hover::after {
     content: "";
     cursor: default;
     position: absolute;
-    top: -10px;
+    top: -5px;
     background-color: rgb(56, 56, 56);
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, transparent), color-stop(50%, rgb(56, 56, 56)));
-    background: -o-linear-gradient(top left, transparent 50%, rgb(56, 56, 56) 50%);
     background: linear-gradient(to bottom right, transparent 50%, rgb(56, 56, 56) 50%);
-    left: calc(19.5px - 7px);
+    left: 50%;
     border-bottom: 5px solid rgb(56, 56, 56);
     border-right: 5px solid rgb(56, 56, 56);
-    -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
+    transform: rotate(45deg) translateX(-50%);
     opacity: 1;
     width: 10px;
     height: 10px;
+    z-index: 101;
 }

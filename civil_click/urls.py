@@ -24,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("civil_web.urls")),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
-    path('favicon.ico', RedirectView.as_view(url='/static/civil/images/icons/favicon.ico'), name="favicon"),
+    path('favicon.ico', RedirectView.as_view(url='/static/civil/images/favicon.ico'), name="favicon"),
 ]

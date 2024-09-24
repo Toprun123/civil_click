@@ -1,10 +1,28 @@
-{% extends "calio/layout.html" %}
+{% extends "civil/layout.html" %}
 {% load static %}
 
-{% block title %}Calio - a calculator simulator{% endblock %}
+{% block title %}Civil_Click - a civilization game{% endblock %}
 
 {% block body %}
     <div class="main">
-        Hello World
+        <div class="title">
+            Welcome to <span class="name">Civil_Click</span> where you can build your civilization from scratch, using only numbers.<br><br>
+            Let's see how many stars you can get -><br>
+        </div>
+        <br>
+        <a id="play-btn" href="/game"><span>Play now -></span></a><br>
+        <br>
+        <br>
+        <div class="footnotes">
+            <span class="name">Civil_Click</span> is a simple single player game that works by clicking to gain basic resources and eventually branching out to build your own factories. <br><br>
+            The goal is to collect as many stars as you can (use our helpful tooltips to figure out how to do it).<br><br>
+            Each star is ten times harder to gain than the previous one, let's see how far you can go. <br><br>
+            This game will also save your game state to your account automatically every 10 seconds, so you dont lose any progress. <br><br>
+            You can also sign in to your account anywhere to continue playing from your initial game state. <br><br>
+            It is also impossible to lose your stars once you gain it. <br><br>
+            Enjoy playing! <br><br>
+            Created by: Syed Daanish <br><br>
+            Contact me @: <a href="https://github.com/Toprun123">Toprun123 (github)</a> or <a href="mailto:syed.daanish@sixzix.com">syed.daanish@sixzix.com (e-mail)</a>
+        </div>
     </div>
 {% endblock %}

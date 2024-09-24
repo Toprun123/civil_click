@@ -24,7 +24,7 @@ Now you can access the project at the url: http://127.0.0.1:8000/ or http://loca
 
 Once you open the url, you can see the project's home page. Here you can click on register to register a new user, login to login to your account, or click on the Play button to start playing the game.
 
-##### How to play:
+#### How to play:
 
 The game is played by clicking on the basic activity buttons to obtain resources.
 
@@ -42,7 +42,7 @@ Once you have maximum resources you can click on the ascend button to increase y
 
 ## Distinctiveness and Complexity
 
-##### Project Distinctiveness
+#### Project Distinctiveness
 This project distinguishes itself from traditional social networks and e-commerce sites by focusing on a unique gaming experience. It contains a unique style of passive gaming. Unlike other projects in this course, this game incorporates various interactive features such as levels, and resource management.
 
 #### Project Complexity
@@ -68,7 +68,7 @@ The files `settings.py` and `urls.py` whithin the `civil_click` directory are al
 - The `settings.py` file contains the settings to activate the `civil_web` application and set the directory for serving static files.
 - While the `urls.py` file contains the urls for the favicon and forwards other urls from the `civil_web` application.
 
-### A more detailed explanation of each file:
+## A more detailed explanation of each file:
 #### `urls.py`
 In this file I define the urls for the game. The urls are defined as follows:
 - `index` (This is the homepage for the project.)

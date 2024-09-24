@@ -72,9 +72,9 @@ The files `settings.py` and `urls.py` whithin the `civil_click` directory are al
 #### `urls.py`
 In this file I define the urls for the game. The urls are defined as follows:
 - `index` (This is the homepage for the project.)
-- `login` (This is the url for the login page.)
-- `register` (This is the url for the register page.)
-- `logout` (This is the url for the logout page.)
+- `login_view` (This is the url for the login page.)
+- `register_view` (This is the url for the register page.)
+- `logout_view` (This is the url for the logout page.)
 - `game` (This is the url for the game page.)
 - `save-api` (This is used for saving the game state using xhr requests.)
 - `get-api` (This is used for loading the game state when the user opens the game page.)

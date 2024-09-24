@@ -67,11 +67,11 @@ def index(request):
     })
 
 @login_required(login_url='/login')
-def logout(request):
+def logout_view(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
 
-def login(request):
+def login_view(request):
     login_form = LoginForm()
     if request.method == "POST":
         username = request.POST["username"]
@@ -90,7 +90,7 @@ def login(request):
             "login_form": login_form
         })
 
-def register(request):
+def register_view(request):
     register_form = RegisterForm()
     if request.method == "POST":
         username = request.POST["username"]
